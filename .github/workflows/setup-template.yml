@@ -1,0 +1,27 @@
+name: Setup template
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Replace REPO_NAME placeholder in README
+        run: |
+          if grep -q "REPO_NAME" README.md; then
+            sed -i "s/REPO_NAME/${{ github.event.repository.name }}/g" README.md
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "chore: update README with repository name"
+            git push
+          fi

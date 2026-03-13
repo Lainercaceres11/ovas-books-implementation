@@ -1,0 +1,74 @@
+{
+  "name": "ova-base-template",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "cz": "cz",
+    "clone": "cd src/scripts/clone && npm start",
+    "flatten": "cd src/scripts/flatten && npm start",
+    "normalize": "cd src/scripts/normalize && npm start",
+    "pages": "cd src/scripts/pages && npm start",
+    "setup:branch": "(git rev-parse --verify develop || (git fetch origin && git branch -r | grep -q 'origin/develop' && git checkout -b develop origin/develop || git checkout -b develop)) && git checkout develop && git pull origin develop",
+    "setup:submodules": "(cd src/shared && git checkout develop && git pull origin develop) && (cd src/scripts && git checkout develop && git pull origin develop) && (cd .vscode && git checkout main && git pull origin main)",
+    "setup:develop": "npm run setup:branch && npm run setup:submodules && npm install && npm run dev"
+  },
+  "workspaces": [
+    "src/shared",
+    "src/scripts"
+  ],
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "books-image-converter": "^1.3.0",
+    "books-ui": "^1.0.2",
+    "canvas-confetti": "^1.9.4",
+    "clsx": "^2.1.1",
+    "gsap": "^3.14.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "wicg-inert": "^3.1.3",
+    "wouter": "3.3.5",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "19.6.1",
+    "@commitlint/config-conventional": "19.6.0",
+    "@eslint/js": "9.17.0",
+    "@spiriit/vite-plugin-svg-spritemap": "3.0.0",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@vitejs/plugin-basic-ssl": "1.2.0",
+    "@vitejs/plugin-react": "4.3.4",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "commitizen": "4.3.1",
+    "eslint": "9.17.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-react-hooks": "5.0.0",
+    "eslint-plugin-react-refresh": "0.4.16",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "globals": "15.14.0",
+    "husky": "9.1.7",
+    "prettier": "3.4.2",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "8.18.2",
+    "unocss": "0.65.3",
+    "unplugin-turbo-console": "1.11.1",
+    "vite": "6.0.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  }
+}

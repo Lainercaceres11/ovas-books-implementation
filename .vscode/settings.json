@@ -1,0 +1,47 @@
+{
+"files.exclude": {
+    "**/.github": false,
+    "**.husky": true,
+    "**src/vite-env.d.ts": true,
+    "**src/books-ui.d.ts": true,
+    "**.eslintrc.cjs": true,
+    "**.gitmodules": true,
+    "**.prettierignore": true,
+    "**.prettierrc": true,
+    "**.lintstagedrc.json": true,
+    "**commitlint.config.js": true,
+    "**package-lock.json": true,
+    "**uno.config.ts": true,
+    "**eslint.config.js": true,
+    "**tsconfig.app.json":true,
+    "**tsconfig.json": true,
+    "**tsconfig.node.json": true,
+    "**/shared/.eslintrc.cjs": true,
+    "**/shared/.husky": true,
+    "**/shared/.gitignore": true,
+    "**/shared/.prettierignore": true,
+    "**/shared/.prettierrc": true,
+    "**/shared/commitlint.config.js": true,
+    "**/shared/package-lock.json": true,
+    "**/scripts/.gitignore": true,
+    "**/scripts/**/package-lock.json": true
+  },
+//   "workbench.colorCustomizations": {
+//     "titleBar.activeBackground": "#313e58",
+//     "titleBar.inactiveBackground": "#333333",
+//     "titleBar.inactiveForeground": "#f5f5f5"
+//   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "css.lint.validProperties": ["composes"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}

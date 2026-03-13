@@ -1,0 +1,79 @@
+div.radio {
+  --input-radio-clr: var(--white);
+  --input-radio-border-clr: var(--primary-600);
+  --input-radio-bg: var(--primary-600);
+  --input-size: 1.3rem;
+  --input-size-svg: 1em;
+  --input-radio-gap: 1rem;
+  --corner: 0.5em;
+
+  position: relative;
+
+  padding: 0.5rem 1rem;
+  justify-content: flex-start;
+  background-color: transparent;
+  color: var(--secondary);
+
+  /* sombra de tarjeta */
+  filter: drop-shadow(2px 2px 3px #60606057);
+}
+
+div.radio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: var(--white);
+
+  clip-path: polygon(
+    0 var(--corner),
+    var(--corner) 0,
+    calc(100% - var(--corner)) 0,
+    100% var(--corner),
+    100% calc(100% - var(--corner)),
+    calc(100% - var(--corner)) 100%,
+    var(--corner) 100%,
+    0 calc(100% - var(--corner))
+  );
+}
+
+div.radio label::first-letter {
+  color: var(--clr-text-main);
+  font-weight: bold;
+}
+
+.radio:has(input:checked) label::first-letter {
+  color: var(--primary);
+}
+
+.radio[data-state='right'] {
+  --input-radio-bg: var(--success);
+}
+
+.radio[data-state='wrong'] {
+  --input-radio-bg: var(--wrong);
+}
+
+.radio :global(.c-input-radio__box) {
+  min-inline-size: var(--input-size);
+  min-block-size: var(--input-size);
+  border: 1.8px solid var(--input-radio-border-clr);
+}
+
+.radio :global(.c-input-radio__icon) svg {
+  width: var(--input-size-svg);
+  height: var(--input-size-svg);
+}
+
+html[data-dark-mode='true'] div.radio {
+  background-color: var(--clr-background);
+}
+
+html[data-dark-mode='true'] .radio > div {
+  border: 2px solid var(--primary-100);
+}
+
+html[data-dark-mode='true'] .radio > div:focus-within {
+  outline: max(2px, 0.08em) solid var(--primary-100);
+}

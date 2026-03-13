@@ -1,0 +1,21 @@
+{
+  "name": "normalize-filenames",
+  "version": "1.0.0",
+  "description": "A simple CLI to normalize filename using node",
+  "keywords": [
+    "node",
+    "cli",
+    "files"
+  ],
+  "license": "ISC",
+  "author": "Alejandro Repizo",
+  "type": "module",
+  "main": "normalize-filename.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.2"
+  }
+}

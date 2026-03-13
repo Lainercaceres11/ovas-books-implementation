@@ -1,0 +1,350 @@
+.learning-path {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  min-height: 80vh;
+}
+
+.learning-path__avatar {
+  order: 1;
+}
+
+@media screen and (min-width: 1460px) {
+
+  .learning-path {
+    grid-template-columns: auto 1fr;
+  }
+
+  .learning-path__avatar {
+    order: 0;
+  }
+}
+
+.learning-path__navigation {
+  overflow-x: auto;
+  width: 100%;
+  padding: 1rem;
+}
+
+.learning-path__intro {
+  margin-inline: auto;
+  max-width: 100ch;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.learning-path__map {
+  margin-inline: auto;
+  position: relative;
+  max-width: fit-content;
+}
+
+.learning-path__list {
+  display: grid;
+  grid-template-columns: repeat(6, 10rem);
+  position: relative;
+  z-index: 2;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+}
+
+.learning-path__bridge {
+  --color-bridge-border: var(--primary-400);
+  --color-bridge-fill: var(--primary-50);
+
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.learning-path__bridge-svg--desktop,
+.learning-path__bridge-svg--tablet,
+.learning-path__bridge-svg--mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ocultar/Mostrar para responsive */
+.learning-path__bridge-svg--tablet,
+.learning-path__bridge-svg--mobile {
+  display: none;
+}
+
+/* ── LAS LÍNEAS DEL PUENTE ── */
+.learning-path__bridge-path--outer {
+  fill: none;
+  stroke: var(--color-bridge-border, #167db3);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.learning-path__bridge-path--inner {
+  fill: none;
+  stroke: var(--color-bridge-fill, #d9fcfc);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.learning-path__item {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: var(--pos-row);
+  grid-column: var(--pos-col);
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100%;
+  list-style: none;
+}
+
+.learning-path__node {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+/* ── Estados específicos ── */
+
+.learning-path__node[data-kind="start"] {
+  --node-ring-color: #38AD2A;
+  --node-icon-bg: #CAF1C6;
+  --node-icon-color: #319C26;
+  --node-halo: #AFEAA9;
+}
+
+.learning-path__node[data-kind="finish"] {
+  --node-ring-color: #A61C1C;
+  --node-icon-bg: #F4BEBE;
+  --node-icon-color: #CD2323;
+  --node-halo: #EFA4A4;
+}
+
+.learning-path__node[data-kind="quiz"] {
+  --node-ring-color: var(--accent);
+  --node-icon-bg: var(--accent-100);
+  --node-icon-color: var(--accent-500);
+  --node-halo: var(--accent-200);
+}
+
+.learning-path__node:is([data-kind="objective"], [data-kind="video"], [data-kind="content"], [data-kind="resume"]) {
+  --node-ring-color: var(--primary-300);
+  --node-icon-bg: var(--primary-100);
+  --node-icon-color: var(--primary-500);
+  --node-halo: var(--primary-200);
+}
+
+.learning-path__node[data-locked='true'] {
+  --node-ring-color: var(--secondary);
+  --node-icon-bg: var(--secondary-100);
+  --node-icon-color: var(--secondary-500);
+  --node-halo: var(--secondary-200);
+  cursor: not-allowed;
+}
+
+.learning-path__node[data-locked='true']:hover .learning-path__node-visual {
+  box-shadow: 0 0 0 0.4rem var(--node-halo);
+  transform: none;
+}
+
+.learning-path__node[data-locked='true']:hover .learning-path__node-ring {
+  opacity: 0.6;
+  animation: none;
+}
+
+.learning-path__node[data-locked='true']:hover .learning-path__node-visual::before,
+.learning-path__node[data-locked='true']:hover .learning-path__node-visual::after {
+  animation: none;
+}
+
+div.learning-path__tooltip {
+  --tooltip-bg: var(--white);
+  --tooltip-arrow-bg: var(--white);
+
+  z-index: var(--z-index-modal);
+  font-size: var(--fs-200);
+}
+
+/* clases base para que consuman estas variables  */
+.learning-path__node-visual {
+  /* Fondo blanco para que no se vea el anillo TODO: cambiar */
+  box-shadow: 0 0 0 0.4rem var(--node-halo, rgba(113, 212, 254, 0.2));
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 7rem;
+  height: 7rem;
+  transition: all 0.3s ease;
+  background-color: #fcfcfc;
+  border-radius: 50%;
+}
+
+.learning-path__node:hover .learning-path__node-visual {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 0 0.5rem var(--node-halo, rgba(113, 212, 254, 0.35)),
+    0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Efectos "ripple" (varias ondas) que salen desde el centro */
+.learning-path__node-visual::before,
+.learning-path__node-visual::after {
+  inset: 0;
+  pointer-events: none;
+  filter: blur(1px);
+  content: '';
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  border: 1px solid var(--node-ring-color, #71d4fe);
+  border-radius: 50%;
+}
+
+.learning-path__node:hover .learning-path__node-visual::before {
+  animation: rippleOut 4s linear infinite;
+}
+
+.learning-path__node:hover .learning-path__node-visual::after {
+  animation: rippleOut 4s linear infinite;
+  animation-delay: 2s;
+}
+
+@keyframes rippleOut {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+.learning-path__node-ring {
+  inset: 0.4rem;
+  position: absolute;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  border: 3px dashed var(--node-ring-color, #71d4fe);
+  border-radius: 50%;
+}
+
+.learning-path__node:hover .learning-path__node-ring {
+  opacity: 1;
+  animation: spinRing 7s linear infinite;
+}
+
+@keyframes spinRing {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.learning-path__node-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--node-icon-bg, #f0fbff);
+  border-radius: 50%;
+}
+
+.learning-path__node-icon svg {
+  --icon-size: 3rem;
+  color: var(--node-icon-color, #004f71);
+}
+
+
+/* Media Queries */
+
+/* ── Tablet: 4 columnas, 2 items/fila ─────────────────────────── */
+@media (max-width: 1023px) {
+
+  .learning-path__list {
+    grid-template-columns: repeat(4, 10rem);
+  }
+
+  .learning-path__item {
+    grid-row: var(--pos-row-t);
+    grid-column: var(--pos-col-t);
+  }
+
+  .learning-path__bridge-svg--desktop {
+    display: none;
+  }
+
+  .learning-path__bridge-svg--tablet {
+    display: block;
+  }
+
+  .learning-path__navigation {
+    padding: 2rem 1rem;
+  }
+
+  .learning-path__node {
+    padding: 1rem 0.75rem;
+  }
+
+  .learning-path__node-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+}
+
+/* ── Mobile: 2 columnas, zigzag ────────────────────────────────── */
+@media (max-width: 639px) {
+
+  .learning-path__list {
+    grid-template-columns: repeat(2, 10rem);
+  }
+
+  .learning-path__item {
+    grid-row: var(--pos-row-m);
+    grid-column: var(--pos-col-m);
+    width: 6rem;
+    height: 6rem;
+  }
+
+  /* Ocultar desktop y tablet, mostrar mobile */
+  .learning-path__bridge-svg--tablet {
+    display: none;
+  }
+
+  .learning-path__bridge-svg--mobile {
+    display: block;
+  }
+
+  .learning-path__navigation {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .learning-path__node {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .learning-path__node-icon {
+    width: 38px;
+    height: 38px;
+  }
+}

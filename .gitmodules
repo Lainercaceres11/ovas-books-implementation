@@ -1,0 +1,9 @@
+[submodule "src/shared"]
+	path = src/shared
+	url = git@github.com:300-OVAs-2026/core.git
+[submodule "src/scripts"]
+	path = src/scripts
+	url = git@github.com:300-OVAs-2026/scripts.git
+[submodule ".vscode"]
+	path = .vscode
+	url = git@github.com:300-OVAs-2026/ova-snippets.git
