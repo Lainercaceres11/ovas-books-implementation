@@ -102,13 +102,13 @@ const Ova68P4 = () => {
                     name="option-1"
                     state="wrong"
                   />
-                  <Row justifyContent="center" alignItems="center" style={{ gap: '1rem' }}>
+                  <Row justifyContent="center" alignItems="center" addClass="u-gap-x-4">
                     <Radios.Button>
-                      <Button label="Comprobar" />
+                      <Button variant="check" label="Comprobar" />
                     </Radios.Button>
 
                     <Radios.Button type="reset">
-                      <Button label="Reintentar" onClick={notifyReset} />
+                      <Button variant="reset" label="Reintentar" onClick={notifyReset} />
                     </Radios.Button>
                   </Row>
                 </Radios>
@@ -118,7 +118,7 @@ const Ova68P4 = () => {
               <Avatar
                 addClass="u-do-flip"
                 variation={AvatarVariation.THINKING}
-                size="20rem"
+                size="430px"
                 title="Figura 3."
                 alt="Avatar."
               />
@@ -178,7 +178,7 @@ const Ova68P4 = () => {
           <Audio a11y src="assets/audios/a11y/aud_des_68_sld-4_2.mp3" />
           <Row justifyContent="center" alignItems="center">
             <Col xs="11" mm="10" md="9" lg="5" hd="4">
-              <Avatar variation={AvatarVariation.THINKING} size="20rem" title="Figura 3." alt="Avatar." />
+              <Avatar variation={AvatarVariation.THINKING} size="430px" title="Figura 3." alt="Avatar." />
             </Col>
 
             <Col xs="11" mm="10" md="9" lg="6" hd="5" addClass="u-flow">
@@ -213,13 +213,13 @@ const Ova68P4 = () => {
                     name="option-2"
                     state="wrong"
                   />
-                  <Row justifyContent="center" alignItems="center" style={{ gap: '1rem' }}>
+                  <Row justifyContent="center" alignItems="center" addClass="u-gap-x-4">
                     <Radios.Button>
-                      <Button label="Comprobar" />
+                      <Button variant="check" label="Comprobar" />
                     </Radios.Button>
 
                     <Radios.Button type="reset">
-                      <Button label="Reintentar" onClick={notifyReset} />
+                      <Button variant="reset" label="Reintentar" onClick={notifyReset} />
                     </Radios.Button>
                   </Row>
                 </Radios>
