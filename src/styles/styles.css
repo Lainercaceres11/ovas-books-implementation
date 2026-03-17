@@ -1,0 +1,21 @@
+/* true-false */
+
+.true-false__option {
+    color: var(--primary-900);
+    background-color: var(--accent);
+}
+
+.true-false__option:has(input:checked) {
+    background-color: var(--primary-900);
+    color: var(--white);
+}
+
+.true-false__option:has(input[data-state="right"]) {
+    background-color: var(--success);
+    color: var(--white);
+}
+
+.true-false__option:has(input[data-state="wrong"]) {
+    background-color: var(--wrong);
+    color: var(--white);
+}

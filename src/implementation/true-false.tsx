@@ -9,7 +9,7 @@ import { ToastFeedback } from '@/shared/components/features/toast-feedback';
 
 import type { OptionRadio } from '@/shared/components/activities/true-false-activity/types/types';
 
-import css from '../styles/ova75.module.css';
+import css from '@styles/styles.css';
 
 const MODALS = {
   QUESTION_1_SUCCESS: 'modal-correct-activity-q1',
