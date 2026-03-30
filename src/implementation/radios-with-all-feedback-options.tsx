@@ -40,7 +40,12 @@ const MODALS = {
 const LENGTH_QUESTION = 5;
 
 const Ova105p04 = () => {
-  const { Modal, Stars, notifyReset, reportResult } = useGamification({
+  const {
+    Modal: ModalQuiz,
+    Stars,
+    notifyReset,
+    reportResult
+  } = useGamification({
     id: 'gr-2-105-2024-2-sld-4',
     total: LENGTH_QUESTION
   });
@@ -80,7 +85,7 @@ const Ova105p04 = () => {
           <Audio a11y src="assets/audios/aud_des_ova-105_sld-4_1.mp3" />
           <Row justifyContent="center" alignItems="center">
             <Col xs="11" mm="10" md="9" lg="6" hd="5" addClass="u-flow">
-              <Audio addClass="u-m-0" src="assets/audios/aud_ova-105_sld-4_1.mp3" />
+              <Audio addClass="u-m-0" src="assets/audios/content/aud_gr2_ova-105_sld-4_1.mp3" />
 
               <p>
                 A continuación, realizaremos la autoevaluación de conocimientos adquiridos en este recurso. Consiste en
@@ -130,7 +135,7 @@ const Ova105p04 = () => {
             type="success"
             isOpen={isOpen === MODALS.QUESTION_1_SUCCESS}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_2 (Correcto).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_1 (Correcto).mp3">
             <p>
               Muy bien. La comunicación y las habilidades interpersonales son fundamentales para influir, motivar y
               lograr resultados a través de los demás.
@@ -141,7 +146,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_1_1_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_2 (Incorrecto a).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_1 (Incorrecto a).mp3">
             <p>
               Aunque el dominio técnico es importante, un gerente necesita habilidades interpersonales para liderar
               equipos y gestionar relaciones de manera efectiva.
@@ -152,7 +157,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_1_3_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_2 (Incorrecto b).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_1 (Incorrecto c).mp3">
             <p>
               El conocimiento financiero es útil, pero no es suficiente para liderar equipos y fomentar la colaboración.
             </p>
@@ -162,7 +167,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_1_4_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_2 (Incorrecto d).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_1 (Incorrecto d).mp3">
             <p>
               Aunque las estrategias de ventas son valiosas en ciertas áreas, no son esenciales para un liderazgo
               efectivo en general.
@@ -187,7 +192,7 @@ const Ova105p04 = () => {
             </Col>
 
             <Col xs="11" mm="10" md="9" lg="6" hd="5" addClass="u-flow">
-              <Audio addClass="u-m-0" src="assets/audios/aud_ova-105_sld-4_2.mp3" />
+              <Audio addClass="u-m-0" src="assets/audios/content/aud_gr2_ova-105_sld-4_2.mp3" />
 
               <p className="u-font-bold">Selecciona la respuesta que sea correcta. </p>
 
@@ -239,7 +244,7 @@ const Ova105p04 = () => {
             type="success"
             isOpen={isOpen === MODALS.QUESTION_2_SUCCESS}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_2 (Correcto).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_2 (Correcto).mp3">
             <p>
               Muy bien. Escuchar y dialogar son las bases para resolver conflictos de manera constructiva y fortalecer
               relaciones.
@@ -250,7 +255,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_2_2_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_2 (Incorrecto a).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_2 (Incorrecto b).mp3">
             <p>
               Las decisiones unilaterales pueden resolver el problema momentáneamente, pero no promueven la colaboración
               ni solucionan la raíz del conflicto.
@@ -261,7 +266,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_2_1_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_2 (Incorrecto b).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_2 (Incorrecto a).mp3">
             <p>Evitar el conflicto puede agravar el problema y generar tensiones a largo plazo.</p>
           </ToastFeedback>
 
@@ -269,7 +274,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_2_4_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_2 (Incorrecto d).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_2 (Incorrecto d).mp3">
             <p>Delegar un conflicto puede generar desconfianza y falta de liderazgo.</p>
           </ToastFeedback>
         </Panel.Section>
@@ -282,7 +287,7 @@ const Ova105p04 = () => {
           <Audio a11y src="assets/audios/aud_des_ova-105_sld-4_3.mp3" />
           <Row justifyContent="center" alignItems="center">
             <Col xs="11" mm="10" md="9" lg="6" hd="5" addClass="u-flow">
-              <Audio addClass="u-m-0" src="assets/audios/aud_ova-105_sld-4_3.mp3" />
+              <Audio addClass="u-m-0" src="assets/audios/content/aud_gr2_ova-105_sld-4_3.mp3" />
 
               <p className="u-font-bold">Selecciona la respuesta que sea correcta. </p>
 
@@ -327,7 +332,7 @@ const Ova105p04 = () => {
             type="success"
             isOpen={isOpen === MODALS.QUESTION_3_SUCCESS}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_3 (Correcto).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_3 (Correcto).mp3">
             <p>
               Muy bien. El diagrama de Gantt es una herramienta ampliamente utilizada para planificar y gestionar
               proyectos de manera visual.
@@ -338,7 +343,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_3_2_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_3 (Incorrecto a).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_3 (Incorrecto b).mp3">
             <p>Un CRM se utiliza principalmente para gestionar relaciones con clientes, no proyectos.</p>
           </ToastFeedback>
 
@@ -346,7 +351,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_3_3_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_3 (Incorrecto b).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_3 (Incorrecto c).mp3">
             <p>
               La matriz DOFA es útil para el análisis estratégico, pero no es una herramienta específica de gestión de
               proyectos.
@@ -357,7 +362,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_3_4_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_3 (Incorrecto d).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_3 (Incorrecto d).mp3">
             <p>
               El Canvas se utiliza para diseñar modelos de negocio, pero no es una herramienta de gestión de proyectos.
             </p>
@@ -381,7 +386,7 @@ const Ova105p04 = () => {
             </Col>
 
             <Col xs="11" mm="10" md="9" lg="6" hd="5" addClass="u-flow">
-              <Audio addClass="u-m-0" src="assets/audios/aud_ova-105_sld-4_4.mp3" />
+              <Audio addClass="u-m-0" src="assets/audios/content/aud_gr2_ova-105_sld-4_4.mp3" />
 
               <p className="u-font-bold">Selecciona la respuesta que sea correcta. </p>
 
@@ -433,7 +438,7 @@ const Ova105p04 = () => {
             type="success"
             isOpen={isOpen === MODALS.QUESTION_4_SUCCESS}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_4 (Correcto).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_4 (Correcto).mp3">
             <p>
               ¡Bien hecho! Los datos relevantes y actualizados son esenciales para tomar decisiones informadas y
               estratégicas.
@@ -444,7 +449,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_4_1_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_4 (Incorrecto a).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_4 (Incorrecto a).mp3">
             <p>
               Las percepciones pueden ser útiles, pero los datos objetivos son fundamentales para decisiones acertadas.
             </p>
@@ -454,7 +459,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_4_3_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_2 (Incorrecto b).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_4 (Incorrecto c).mp3">
             <p>Involucrar al equipo fomenta la colaboración y mejora la calidad del análisis.</p>
           </ToastFeedback>
 
@@ -462,7 +467,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_4_4_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_2 (Incorrecto d).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_4 (Incorrecto d).mp3">
             <p>La cantidad no es tan importante como la calidad y relevancia de los datos para el problema.</p>
           </ToastFeedback>
         </Panel.Section>
@@ -475,7 +480,7 @@ const Ova105p04 = () => {
           <Audio a11y src="assets/audios/aud_des_ova-105_sld-4_5.mp3" />
           <Row justifyContent="center" alignItems="center">
             <Col xs="11" mm="10" md="9" lg="6" hd="5" addClass="u-flow">
-              <Audio addClass="u-m-0" src="assets/audios/aud_ova-105_sld-4_5.mp3" />
+              <Audio addClass="u-m-0" src="assets/audios/content/aud_gr2_ova-105_sld-4_5.mp3" />
 
               <p className="u-font-bold">Selecciona la respuesta que sea correcta. </p>
 
@@ -535,7 +540,7 @@ const Ova105p04 = () => {
             type="success"
             isOpen={isOpen === MODALS.QUESTION_5_SUCCESS}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_3 (Correcto).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_5 (Correcto).mp3">
             <p>¡Bien hecho! La diversidad e inclusión fomentan un entorno más colaborativo, innovador y respetuoso.</p>
           </ToastFeedback>
 
@@ -543,7 +548,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_5_1_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_3 (Incorrecto a).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_5 (Incorrecto a).mp3">
             <p>
               Aunque la competencia puede ser útil en algunos contextos, a menudo genera tensiones y disminuye la
               colaboración.
@@ -554,7 +559,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_5_3_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_3 (Incorrecto b).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_5 (Incorrecto c).mp3">
             <p>Evitar cambios puede llevar al estancamiento y dificultar la adaptación a nuevos desafíos.</p>
           </ToastFeedback>
 
@@ -562,7 +567,7 @@ const Ova105p04 = () => {
             type="wrong"
             isOpen={isOpen === MODALS.QUESTION_5_4_WRONG}
             onClose={closeModal}
-            audio="assets/audios/aud_ova-105_g2_sld-4_3 (Incorrecto d).mp3">
+            audio="assets/audios/content/aud_gr2_ova-105_sld-4_5 (Incorrecto d).mp3">
             <p>
               La tecnología es útil, pero debe implementarse considerando su impacto en las personas y la cultura
               organizacional.
@@ -571,7 +576,10 @@ const Ova105p04 = () => {
         </Panel.Section>
       </Panel>
 
-      {Modal}
+      <ModalQuiz
+        audio="assets/audios/content/aud_gr2_ova-105_sld-4_5 (Bien 5).mp3"
+        interpreter={{ contentURL: 'assets/videos/interprete/vid_int_ova-105_sld-4_modal_general.mp4' }}
+      />
     </>
   );
 };
