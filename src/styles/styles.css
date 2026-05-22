@@ -19,3 +19,17 @@
     background-color: var(--wrong);
     color: var(--white);
 }
+
+/* select */
+.item-select {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+
+@media (min-width: 1025px) {
+    .item-select {
+        grid-template-columns: 70% 1fr;
+    }
+}

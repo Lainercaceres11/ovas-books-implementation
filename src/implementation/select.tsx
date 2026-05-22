@@ -7,14 +7,14 @@ import { ToastFeedback } from '@/shared/components/features/toast-feedback';
 import { Content } from '@/shared/components/layouts';
 import { Button } from '@/shared/components/ui';
 
-import css from '@/styles/ova-43.module.css';
+import css from '@/styles/ova-29.module.css';
 
 const options_select = [
-  { id: 'option-1', option: 'Paria' },
-  { id: 'option-2', option: 'Éxodo' },
-  { id: 'option-3', option: 'Genocidio' },
-  { id: 'option-4', option: 'Industria del Holocausto' },
-  { id: 'option-5', option: 'Solidaridad racional' }
+  { id: 'option-1', option: 'Optimización de anuncios' },
+  { id: 'option-2', option: 'Personalización de mensajes' },
+  { id: 'option-3', option: 'Generación de contenido' },
+  { id: 'option-4', option: 'Chatbots y atención al cliente' },
+  { id: 'option-5', option: 'Análisis de sentimiento' }
 ];
 
 const MODALS = {
@@ -22,10 +22,20 @@ const MODALS = {
   FALSE: 'modal-wrong-activity'
 };
 
-const Ova06p10 = () => {
+const TOTAL_CORRECT = 1;
+
+const Ova29p04 = () => {
   // Controlamos los modales de la actividad.
   const [isOpen, setIsOpen] = useState<string | null>(null);
-  const { reportResult, notifyReset, Stars, Modal } = useGamification({ id: 'act-01', total: 1 });
+  const {
+    reportResult,
+    notifyReset,
+    Stars,
+    Modal: ModalGamification
+  } = useGamification({
+    id: 'gr-1-29-2025-1-sld-4',
+    total: TOTAL_CORRECT
+  });
 
   /**
    * Función que se encarga de validar
@@ -37,8 +47,8 @@ const Ova06p10 = () => {
     setIsOpen(MODALS[activityResult as keyof typeof MODALS]);
     reportResult({
       success: result,
-      correct: 1,
-      total: 1
+      correct: TOTAL_CORRECT,
+      total: TOTAL_CORRECT
     });
   };
 
@@ -46,23 +56,28 @@ const Ova06p10 = () => {
 
   return (
     <>
-      <Content stars={Stars}>
-        <Audio a11y src="assets/audios/aud_des_ova-06_sld-10.mp3" />
+      <Content
+        stars={Stars}
+        interpreter={{
+          a11yURL: 'descriptives/vid_int_des_ova-29_sld-4.mp4',
+          contentURL: 'content/vid_int_ova-29_sld-4.mp4'
+        }}>
+        <Audio a11y src="assets/audios/descriptives/aud_des_ova-29_sld-4.mp3" />
 
         <Row justifyContent="center" alignItems="center">
-          <Col xs="11" mm="10" md="9" addClass="u-flow">
-            <Audio src="assets/audios/aud_ova-06_sld-10.mp3" />
+          <Col xs="11" mm="10" md="10" addClass="u-flow">
+            <Audio src="assets/audios/content/aud_ova-29_sld-4.mp3" />
             <p className="u-font-bold u-text-center">
-              En la actividad de presaberes encontrarás cinco conceptos para relacionar. Selecciona la palabra del menú
-              que corresponda al enunciado.
+              A continuación, encontrarás una actividad de unir las columnas. Por favor une los nueve conceptos de la
+              columna A y la columna B de acuerdo con lo que has aprendido en este recurso.
             </p>
             <Selects onResult={handleValidate}>
-              <ol className="u-flow">
+              <ol className={`u-flow ${css['list-bold']} `}>
                 <li>
                   <div className={css['item-select']}>
                     <p>
-                      <strong>Concepto 1. </strong>Sujeto excluido de todo vínculo social, legal y político, convertido
-                      en invisible ante los sistemas institucionales y despojado del derecho a pertenecer.
+                      Puede ayudar a redactar anuncios más efectivos y atractivos, basándose en las tendencias actuales
+                      y el comportamiento del consumidor. Ejemplo: Hootsuite.
                     </p>
                     <Selects.Select
                       options={options_select}
@@ -75,8 +90,9 @@ const Ova06p10 = () => {
                 <li>
                   <div className={css['item-select']}>
                     <p>
-                      <strong>Concepto 2. </strong>Desplazamiento masivo forzado de una población, caracterizado por la
-                      pérdida de territorio, comunidad e identidad.
+                      Utilizando datos de los clientes, se pueden generar mensajes personalizados que resuenen más con
+                      cada individuo, aumentando la efectividad de las campañas de <em>marketing</em>. Ejemplo:
+                      Chatbots.
                     </p>
                     <Selects.Select
                       options={options_select}
@@ -89,8 +105,8 @@ const Ova06p10 = () => {
                 <li>
                   <div className={css['item-select']}>
                     <p>
-                      <strong>Concepto 3. </strong>Exterminio sistemático de un grupo humano con el objetivo de eliminar
-                      su existencia física, cultural o simbólica.
+                      Con IA se pueden crear textos para blogs, redes sociales, correos electrónicos y más, ayudando a
+                      mantener una presencia constante y atractiva en línea. Ejemplo: Canva con IA.
                     </p>
                     <Selects.Select
                       options={options_select}
@@ -103,8 +119,9 @@ const Ova06p10 = () => {
                 <li>
                   <div className={css['item-select']}>
                     <p>
-                      <strong>Concepto 4. </strong>Uso político del recuerdo del Holocausto para justificar prácticas
-                      contemporáneas de opresión, invisibilizando otras memorias.
+                      Con esta función se puede responder preguntas frecuentes, guiar a los clientes a través de
+                      procesos de compra y proporcionar soporte 24/7, mejorando la experiencia del usuario. Ejemplo:
+                      Marketo engage.
                     </p>
                     <Selects.Select
                       options={options_select}
@@ -118,8 +135,9 @@ const Ova06p10 = () => {
                 <li>
                   <div className={css['item-select']}>
                     <p>
-                      <strong>Concepto 5. </strong>Compromiso ético activo con el otro, basado en la razón y no en
-                      emociones pasajeras, como fundamento de una humanidad inclusiva.
+                      Es posible analizar comentarios y opiniones de los clientes en redes sociales y otros canales para
+                      entender mejor sus sentimientos y ajustar las estrategias de <em>marketing</em> en consecuencia.
+                      Ejemplo: HubSpot.
                     </p>
                     <Selects.Select
                       options={options_select}
@@ -149,13 +167,15 @@ const Ova06p10 = () => {
         type="success"
         isOpen={isOpen === MODALS.TRUE}
         onClose={closeModal}
-        audio="assets/audios/aud_ova-06_sld-10_modal_correcto.mp3"
+        audio="assets/audios/aud_ova-29_sld-4_modal_correcto.mp3"
         interpreter={{
-          contentURL: 'vid_int_ova-06_sld-10_modalcorrecto.mp4'
+          contentURL: 'vid_int_ova-29_sld-4_modalcorrecto.mp4'
         }}>
         <p>
-          Buen trabajo. Has seleccionado la respuesta correcta. Sigue así, estás avanzando en la dirección adecuada.
-          Cada paso cuenta para consolidar tu proceso de aprendizaje.
+          Si los cinco conceptos se encuentran correctamente respondidos, tus conocimientos previos sobre el tema las
+          herramientas de <em>marketing</em> digital apoyadas en IA son destacados y te permiten visualizar con claridad
+          las tendencias para la innovación en <em>marketing</em>. Continúa por la misma ruta de interés en tu formación
+          y dominio conceptual hacia la consolidación del aprendizaje.
         </p>
       </ToastFeedback>
 
@@ -163,19 +183,25 @@ const Ova06p10 = () => {
         type="wrong"
         isOpen={isOpen === MODALS.FALSE}
         onClose={closeModal}
-        audio="assets/audios/aud_ova-06_sld-10_modal_incorrecto.mp3"
+        audio="assets/audios/aud_ova-29_sld-4_modal_incorrecto.mp3"
         interpreter={{
-          contentURL: 'vid_int_ova-06_sld-10_modalincorrecto.mp4'
+          contentURL: 'vid_int_ova-29_sld-4_modalincorrecto.mp4'
         }}>
         <p>
-          asi lo logras. No te preocupes; equivocarse es parte del aprendizaje. Revisa nuevamente el material y sigue
-          intentando. ¡Todavía puedes mejorar!
+          Si los conceptos no se identificaron de manera correcta, tus conocimientos previos sobre el tema se encuentran
+          por debajo de lo esperado, por lo cual es necesario iniciar un proceso de fortalecimiento del aprendizaje, que
+          te permitan ir adquiriendo el dominio de conocimientos propios de las nuevas tendencias del <em>marketing</em>{' '}
+          digital, tanto conceptualmente como en competencias, que te harán un experto en el área, para proponer
+          soluciones innovadoras en los contextos.
         </p>
       </ToastFeedback>
 
-      {Modal}
+      <ModalGamification
+        audio="assets/audios/aud_ova-29_sld-4_modal_gamification.mp3"
+        interpreter={{ contentURL: '' }}
+      />
     </>
   );
 };
 
-export default Ova06p10;
+export default Ova29p04;
