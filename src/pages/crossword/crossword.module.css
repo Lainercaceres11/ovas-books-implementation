@@ -1,0 +1,11 @@
+.color-success rect {
+    fill: #94c83f;
+}
+
+.color-wrong rect {
+    fill: #d46153;
+}
+
+.color-normal rect {
+    fill: #f8f8f8;
+}
