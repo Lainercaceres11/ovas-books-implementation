@@ -33,3 +33,16 @@
         grid-template-columns: 70% 1fr;
     }
 }
+select with paragraph
+.selects-wrapper {
+    p {
+        display: inline;
+        line-height: 0.8rem;
+    }
+
+    .select {
+        display: inline-block;
+        margin: 0.6rem;
+        vertical-align: middle;
+    }
+}
